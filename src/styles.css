@@ -1,39 +1,271 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
-body {
-  font-size: 14px;
+#app {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #097054;
 }
 
-div {
-  width: 100%;
-  margin: 20px;
+#app-content {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
-div li {
-  display: flex;
-  align-items: center;
+
+/* ELEMENTS */
+
+header {
+    position: absolute;
+    top: 5%;
 }
 
-div li + li {
-  margin-top: 15px;
+header h1 {
+    color: #ffffff;
 }
 
-button {
-  background: #7159c1;
-  color: #fff;
-  border: 0;
-  padding: 10px 15px;
-  cursor: pointer;
-  margin-top: 15px;
-  font-weight: bold;
-  font-size: 14px;
+label {
+    font-size: medium;
+    color: #cccccc;
 }
 
-div li button {
-  margin: 0 15px;
-  background: #ca4949;
+input {
+    background-color: #333333;
+    height: 25px;
+    color: #cccccc;
+    padding: 10px;
+    border-radius: 5px;
+    border-color: #333333;
+}
+
+button:focus {
+    outline: none;
+    -webkit-appearance: none;
+}
+
+input:focus {
+    outline: none;
+    -webkit-appearance: none;
+}
+
+
+/* IN THE REPOSITORIES LIST */
+
+#repository-list {
+    display: flex;
+    flex-direction: column;
+    margin-right: 5%;
+}
+
+#repository-list li {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 10px;
+    background-color: #ffde00;
+    border-radius: 20px;
+}
+
+#title-likes {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#repository-list li #title {
+    display: inline-block;
+    font-size: larger;
+    color: #333333;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+#repository-list li #likes-icon-number {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: flex-end;
+}
+
+#repository-list li div #likes {
+    display: inline-block;
+    cursor: pointer;
+    background-color: #00000000;
+    border: none;
+    font-size: larger;
+    color: #333333;
+    font-weight: 550;
+    margin-bottom: 10px;
+    transition: ease-out 200ms;
+}
+
+#repository-list li div #likes:hover {
+    color: #2222ff;
+}
+
+#repository-list li div #number-likes {
+    display: inline-block;
+    font-size: larger;
+    color: #333333;
+    font-weight: 550;
+    margin-bottom: 10px;
+}
+
+#repository-list li #techs {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+#repository-list li #tech {
+    font-size: medium;
+    color: #aa3333;
+    font-weight: 550;
+}
+
+#repository-list li #url {
+    margin-bottom: 10px;
+    font-size: medium;
+    color: #097054;
+    font-weight: 550;
+    text-decoration: none;
+    transition: ease-in-out 200ms;
+}
+
+#repository-list li #url:hover {
+    color: #3355aa;
+}
+
+#button-remove {
+    align-self: center;
+    margin-bottom: 5px;
+    width: 40%;
+    padding: 5px;
+    border-width: 0px;
+    border-radius: 10px;
+    background-color: #ff1111;
+    color: #ffffff;
+    font-weight: 550;
+    font-size: medium;
+    cursor: pointer;
+    transition: 200ms ease-in-out;
+}
+
+#button-remove:hover {
+    color: #ffffff;
+    background-color: #333333;
+}
+
+
+/* IN THE TABLE */
+
+#entry-content {
+    width: 25%;
+}
+
+table {
+    display: block;
+    margin-right: 5%;
+    width: 100%;
+}
+
+tbody {
+    width: 100%;
+}
+
+.entry-item {
+    height: 30px;
+}
+
+#table-header td h3 {
+    margin-bottom: 15px;
+    color: #cccccc;
+}
+
+#buttons {
+    display: flex;
+    flex: 1;
+    width: 250px;
+    height: 50px;
+    margin-left: 20px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+#add-button {
+    cursor: pointer;
+    margin-left: 10px;
+    background-color: rgba(0, 255, 0, 1);
+    border-width: 1px;
+    border-color: rgba(0, 255, 0, 1);
+    border-radius: 100%;
+    padding: 1px;
+    color: #ffffff;
+    font-weight: 550;
+    transition: ease-in-out 200ms;
+}
+
+#add-button:hover {
+    background-color: #333333;
+    border-color: #333333;
+}
+
+#remove-icon {
+    cursor: pointer;
+    margin-right: 5px;
+    background-color: #ff1111;
+    border-width: 1px;
+    border-color: #ff1111;
+    border-radius: 100%;
+    padding: 1px;
+    color: #ffffff;
+    font-weight: 550;
+    transition: ease-in-out 200ms;
+}
+
+#remove-icon:hover {
+    background-color: #333333;
+    border-color: #333333;
+}
+
+.td-label {
+    padding-right: 10px;
+}
+
+tr td button {
+    cursor: pointer;
+    background-color: rgba(0, 255, 0, 1);
+    border-width: 1px;
+    border-color: rgba(0, 255, 0, 1);
+    border-radius: 10px;
+    margin-left: 25px;
+    padding: 5px;
+    color: #ffffff;
+    font-weight: 550;
+    transition: ease-in-out 200ms;
+}
+
+tr td button:hover {
+    background-color: #333333;
+    border-color: #333333;
 }
